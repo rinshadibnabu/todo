@@ -5,10 +5,10 @@ export const createTable = pgTableCreator((name: string) => `todoapp_${name}`);
 
 export const todos = createTable("todo", (d) => ({
   id: d.integer().primaryKey().generatedAlwaysAsIdentity(),
-  title: d.varchar({ length: 255 }).notNull(),
+  tittle: d.varchar({ length: 255 }).notNull(),
   completed: d.boolean().default(false).notNull(),
   createdAt: d.timestamp().defaultNow().notNull(),
-  descrition: d.text(),
+  description: d.text(),
   userId: d
     .integer()
     .notNull()
